@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project - Rock, Paper, Scissors</title>
+</head>
+<body>
+    
+
+    <script>
+        function game(computer, player){
+            if (computer == player) {
+                console.log("tie game!");
+            } else if (computer == "rock" && player == "paper") {
+                console.log("Paper wraps Rock - You Win!")
+            } else if (computer == "rock" && player == "scissors") {
+                console.log("Rock smashes Scissors - You Lose!")
+            } else if (computer == "paper" && player == "scissors") {
+                console.log("Scissors cut Paper - You Win!")
+            } else if (computer == "paper" && player == "rock") {
+                console.log("Paper wraps Rock - You Lose!")
+            } else if (computer == "scissors" && player == "rock") {
+                console.log("Rock smashes Scissors - You Win!")
+            } else if (computer == "scissors" && player == "paper") {
+                console.log("scissors cut Paper - You Lose!")
+            } 
+        }
+
+        function playerSelection() {
+            let x = prompt("Rock, Paper or Scissors?  - Pick one..");
+            if (x) { x = x.toLowerCase(); };
+            if (x !== "rock" && x !== "paper" && x !== "scissors") {
+                console.log("bad choice - GAME OVER!");
+            } else {
+                return x;
+            }
+        }
+
+        function computerSelection() {
+            let x = ["rock", "paper", "scissors"];
+            let y = Math.floor(Math.random() * 3);
+            let z = x[y];   
+            console.log(z)
+            return z;
+        }
+        
+        game(computerSelection(), playerSelection())
+
+    </script>
+</body>
+</html>
